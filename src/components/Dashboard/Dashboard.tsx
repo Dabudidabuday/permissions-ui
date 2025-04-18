@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router';
 import { User } from '../../types';
 import { WithPermission } from '../../permissions/WithPermission';
 import { AuthContext } from '../../context/AuthContext';
+import { ServicesList } from './components/ServicesList';
 
 interface Service {
   id: string;
@@ -91,13 +92,8 @@ export const Dashboard = () => {
       <Card sx={{width: '100%'}}>
         <CardContent>
           <Typography variant="h6" align="center">Services</Typography>
-          <List>
-            {services.map((service) => (
-              <ListItem key={service.id}>
-                <ListItemText primary={service.name} secondary={service.description} />
-              </ListItem>
-            ))}
-          </List>
+          <ServicesList services={services}/>
+          
             <Button variant="contained" color="primary" onClick={() => {
               navigate('/services'); 
             }}>
