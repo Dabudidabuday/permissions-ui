@@ -31,7 +31,7 @@ export const LoginPage = () => {
   
       navigate('/');
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   }
 
